@@ -4,15 +4,15 @@ function hiddenTextReveal (getElements) {
   this.heading = getElements.heading;
 }
 hiddenTextReveal.prototype.showParagraph = function(currentHeading) {
-  this.paragraphBlog.hide();
-  currentHeading.next().show();
+  $(".excerpt:visible").hide();
+  currentHeading.next(".excerpt").show();
 };
 
 hiddenTextReveal.prototype.bindEvents = function() {
   var _this = this;  
-  this.heading.on("click",function(e) {
-    _this.showParagraph($(this));
+  this.heading.on("click", function(e) {
     e.preventDefault();
+    _this.showParagraph($(this));
   });
 };
 
