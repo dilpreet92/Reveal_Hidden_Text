@@ -1,6 +1,5 @@
 function hiddenTextReveal (getElements) {
   this.divBlog = getElements.divBlog;
-  this.paragraphBlog = getElements.paragraphBlog;
   this.heading = getElements.heading;
 }
 hiddenTextReveal.prototype.showParagraph = function(currentHeading) {
@@ -19,7 +18,6 @@ hiddenTextReveal.prototype.bindEvents = function() {
 $(function() {
   var elements = {
     "divBlog" : $("#blog"), 
-    "paragraphBlog" : $(".excerpt"),
     "heading" : $("#blog").find("h3")
   };
   var hiddenTextRevealer = new hiddenTextReveal(elements);
